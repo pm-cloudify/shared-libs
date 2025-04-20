@@ -135,7 +135,7 @@ func GetUploadsByUsername(username string) ([]Upload, error) {
 
 // get user data by username from users table
 func GetUploadByFileId(file_id uint) (*Upload, error) {
-	query := `SELECT id, filename, username, enable, file_key FROM users WHERE id = $1`
+	query := `SELECT id, filename, username, enable, file_key FROM uploads WHERE id = $1`
 
 	row := DB.QueryRow(context.Background(), query, file_id)
 
